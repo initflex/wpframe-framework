@@ -1,0 +1,33 @@
+{
+    "name": "initflex/wpframe-framework",
+    "description": "WPFrame Framework.",
+    "keywords": ["wordpress", "framework wordpress", "wordpress plugin", "plugin framework", "wordpress plugin framework", "WPFrame Framework"],
+    "type": "library",
+    "require": {
+        "php": "^7.4|^8.0"
+    },
+    "require-dev": {},
+    "license": "MIT",
+    "authors": [{
+        "name": "initflex",
+        "email": "initflex22@gmail.com"
+    }],
+    "support": {
+        "issues": "https://github.com/initflex/wpframe-framework/issues",
+        "source": "https://github.com/initflex/wpframe-framework"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {}
+    },
+    "autoload": {
+        "psr-4": {
+            "Wpframe\\": "src/"
+        }
+    },
+    "autoload-dev": {}
+}
