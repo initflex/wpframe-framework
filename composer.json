@@ -25,8 +25,18 @@
         "allow-plugins": {}
     },
     "autoload": {
+        "files": [
+            "src/Support/functions.php"
+        ], 
         "psr-4": {
-            "Wpframe\\Sys\\": "src/"
+            "Wpframe\\Sys\\Container\\": "src/Container",
+            "Wpframe\\Sys\\Database\\": "src/Database",
+            "Wpframe\\Sys\\Exceptions\\": "src/Exceptions",
+            "Wpframe\\Sys\\Http\\": "src/Http",
+            "Wpframe\\Sys\\Logger\\": "src/Logger",
+            "Wpframe\\Sys\\Routing\\": "src/Routing",
+            "Wpframe\\Sys\\Support\\": "src/Support",
+            "Wpframe\\Sys\\Traits\\": "src/Traits"
         }
     },
     "autoload-dev": {}
