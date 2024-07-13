@@ -235,7 +235,7 @@ function wpf_env($envName = '', $default = null)
  */
 function wpf_base_path($joinPath = '')
 {
-    return __DIR__ . '/../../..' . $joinPath;
+    return WPFP_BASE_PATH . $joinPath;
 }
 
 /**
