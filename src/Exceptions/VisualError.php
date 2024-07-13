@@ -7,7 +7,7 @@ use Wpframe\Sys\Http\Request;
 /**
  * Visual Errors for Error Handlers
  */
-class visualError
+class VisualError
 {
     public static $getError = false;
     public static $getContentsLines = '';
