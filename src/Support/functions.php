@@ -283,7 +283,7 @@ function wpf_bootstrap_path($joinPath = '')
  */
 function wpf_system_path($joinPath = '')
 {
-    return wpf_base_path('/bootstrap/System' . $joinPath);
+    return __DIR__ . '/..'. $joinPath;
 }
 
 /**

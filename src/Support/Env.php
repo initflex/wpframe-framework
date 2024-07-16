@@ -6,7 +6,7 @@ use Dotenv\Dotenv;
 
 class Env
 {
-    public static $loadDirectoryEnv = __DIR__ .'/../../../';
+    public static $loadDirectoryEnv = WPFP_BASE_PATH;
     
     /**
      * Start and load environment file
