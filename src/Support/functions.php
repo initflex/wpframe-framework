@@ -485,7 +485,10 @@ function wpf_config($selector = null)
  */
 function wpf_class_dir($classNamespace = false)
 {
-    $removeFirstPathNamespace = str_replace('Wpframe\\', '', $classNamespace);
+    $removeFirstPathNamespace = str_replace(
+        ['Wpframe\\Sys\\', 'Wpframe\\'], 
+        ['', ''], 
+        $classNamespace);
     $classPathToDir = str_replace('\\', '/', $removeFirstPathNamespace);
     return $classPathToDir;
 }

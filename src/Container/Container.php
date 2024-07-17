@@ -36,7 +36,15 @@ class Container
      */
     public static function singleton($identifier, $callback = null)
     {
-        $classFile = '/' . str_replace('App/', 'app/', wpf_class_dir($identifier)) . '.php';
+        // set prefix path
+        $prefixPath = '/';
+        // check the system's namespace and set prefix path
+        if (strpos($identifier, 'Wpframe\Sys') !== false) {
+            $prefixPath = '/vendor/initflex/wpframe-framework/src/';
+        }
+        // set class file
+        $classFile = $prefixPath . str_replace('App/', 'app/', wpf_class_dir($identifier)) . '.php';
+
         if (!class_exists($identifier)) {
             if (file_exists(wpf_base_path($classFile))) {
                 require wpf_base_path($classFile);
