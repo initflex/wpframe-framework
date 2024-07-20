@@ -162,6 +162,55 @@ function wpf_admin_redirect($pageName = null, $methodName = null, $paramsSet = [
     }
 }
 
+/** 
+ * Create an Admin URL
+ * @param string  $pageName  for set page name
+ * @param string  $methodName   For Set Method Name
+ * @param array  $paramsSet  For Set Parameters Redirect - Default Empty Array
+ * @return false|string  
+ */
+function wpf_admin_url($pageName = null, $methodName = null, $paramsSet = [])
+{
+    $adminUrl = admin_url('admin.php');
+    $pageFormatUrl = '?page=';
+    $methodUrl = '&m=';
+    $setUrl = '';
+
+    if (is_array($paramsSet) && count($paramsSet) > 0) {
+        $paramSetTemp = '';
+        foreach ($paramsSet as $key => $value) {
+            $paramSetTemp .= '&' . $key . '=' . $value;
+        }
+        $paramsSetData = $paramSetTemp;
+    } else {
+        $paramsSetData = '';
+    }
+
+    if (
+        $pageName !== null && $pageName !== '' &&
+        $methodName !== null && $methodName !== ''
+    ) {
+        $setUrl = $adminUrl . $pageFormatUrl . $pageName . $methodUrl . $methodName . $paramsSetData;
+        return $setUrl;
+    } else {
+        return FALSE;
+    }
+}
+
+/**
+ * Get Method name From URL
+ *
+ * @return string  Default Method is 'index'.
+ */
+function wpf_get_url_method()
+{
+    if(isset($_GET['m']) && trim(htmlentities($_GET['m'])) !== '') {
+        return trim(htmlentities($_GET['m']));
+    }
+
+    return 'index';
+}
+
 /**
  * Get domain url
  *
