@@ -219,7 +219,9 @@ function wpf_get_url_method()
  */
 function wpf_get_domain_url(string $path = '')
 {
-    return (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://{$_SERVER["HTTP_HOST"]}$path";
+    return (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://". (isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : (
+        isset($_SERVER["SERVER_NAME"]) ? $_SERVER["SERVER_NAME"] : ''
+    )) ."$path";
 }
 
 /**
